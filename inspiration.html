@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inspiration Video</title>
+  <link rel="stylesheet" href="Styles/layoutstyles.css" />
+  <style>
+    body {
+      background-color: #dcf2ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding-top: 80px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .video-box {
+      flex: 1 1 500px;
+      max-width: 560px;
+    }
+
+    .description-box {
+      flex: 1 1 400px;
+    }
+
+    .description-box h2 {
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .description-box p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e1e4e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 100;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #0073e6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .video-box iframe {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .tableau-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">Hayden Larson</div>
+    <div class="nav-links">
+      <a href="layout.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="interactives.html">Interactives</a>
+      <a href="inspiration.html">Inspiration Video</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="video-box">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/kaOIxll4LCA?si=rvW3fLGFi-WHOE-O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="description-box">
+      <h2>Why This Inspires Me</h2>
+      <p>
+        This clip always inspires me because it connects deeply to my experience serving a two-year LDS mission in Uganda. While “Hakuna Matata” might sound like a simple, playful phrase, its Swahili meaning is "no problem."
+      </p>
+      <p>
+        I met people who embraced a “no problem” attitude despite facing real poverty, uncertainty, and hardship. Their resilience taught me that Joy isn’t the absence of problems but the ability to carry hope through them. That’s why the message of Hakuna Matata resonates so much with me.
+      </p>
+    </div>
+  </div>
+<div class="tableau-wrapper">
+  <h2 style="text-align:center;">World Happiness Report 2023</h2>
+
+  <div class="tableau-center">
+    <div class='tableauPlaceholder' id='viz1765406057892' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='World Happiness Report 2023' 
+               src='https://public.tableau.com/static/images/Wo/WorldHappinessReport2023/Figure2_1/1_rss.png' 
+               style='border: none' />
+        </a>
+      </noscript>
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='WorldHappinessReport2023&#47;Figure2_1' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/Wo/WorldHappinessReport2023/Figure2_1/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+</div>
+
+<script type='text/javascript'>
+  const divElement = document.getElementById('viz1765406057892');
+  const vizElement = divElement.getElementsByTagName('object')[0];
+  vizElement.style.width = '800px';
+  vizElement.style.height = '827px';
+  const scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

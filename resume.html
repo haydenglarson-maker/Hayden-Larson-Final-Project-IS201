@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hayden Larson - Resume</title>
+  <link rel="stylesheet" href="Styles/layoutstyles.css" />
+  <style>
+    body {
+      background-color: #dcf2ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding-top: 80px;
+      color: #333;
+    }
+
+    .resume-wrapper {
+      max-width: 900px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+
+    .contact-info {
+      text-align: center;
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      color: #2c3e50;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 40px;
+    }
+
+    .job, .education-block, .volunteer-block {
+      margin-top: 20px;
+    }
+
+    .job-title, .school, .volunteer-role {
+      font-weight: bold;
+      font-size: 17px;
+      color: #1e2a38;
+    }
+
+    .job-date, .edu-date, .vol-date {
+      float: right;
+      font-style: italic;
+      color: #555;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    .skills-list {
+      columns: 2;
+      margin-top: 10px;
+      line-height: 1.8;
+    }
+
+    .summary {
+      font-style: italic;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      color: #444;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      margin-top: 40px;
+    }
+
+    /* Ensure clearfix for floated dates */
+    .job::after, .education-block::after, .volunteer-block::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 600px) {
+      .skills-list {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">Hayden Larson</div>
+    <div class="nav-links">
+      <a href="layout.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="interactives.html">Interactives</a>
+      <a href="inspiration.html">Inspiration Video</a>
+    </div>
+  </div>
+
+  <div class="resume-wrapper">
+    <h1>Hayden Larson</h1>
+    <div class="contact-info">
+      1234 E 678 N, Pleasant Grove, UT &bull; (801) 123-4567 &bull; madeupemail@gmail.com
+    </div>
+    <p class="summary">
+      I love building community through content creation and design.
+    </p>
+
+    <div class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="job">
+        <div class="job-title">Instructional Design Assistant, BYU Online</div>
+        <div class="job-date">June 2022 – Present</div>
+        <ul>
+          <li>Worked in live instructional courses to accelerate student learning</li>
+          <li>Used website design principles to code content in an understandable manner</li>
+          <li>Worked in a team to accomplish big projects</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-title">Videographer, Self-Employed</div>
+        <div class="job-date">Nov 2021 – May 2022</div>
+        <ul>
+          <li>Captured video for events, sports, and custom client shoots.</li>
+          <li>Managed post-production editing with Adobe tools.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-title">Warehouse Shipping Lead, Qualtry</div>
+        <div class="job-date">Dec 2019 – Jan 2022</div>
+        <ul>
+          <li>Led shipping tasks and ensured team accuracy in packaging.</li>
+          <li>Inspected shipments and managed end-of-day dispatch processes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+  <h2 class="section-title">Education</h2>
+
+  <div class="education-block">
+    <div class="school">High School Diploma, Pleasant Grove High School</div>
+    <div class="edu-date">Graduated May 2022</div>
+  </div>
+
+  <div class="education-block">
+    <div class="school">Brigham Young University</div>
+    <div class="edu-date">Current</div>
+    <p>Pre-Business Student</p>
+  </div>
+</div>
+
+    <div class="section">
+      <h2 class="section-title">Volunteer</h2>
+
+      <div class="volunteer-block">
+        <div class="volunteer-role">Missionary, Church of Jesus Christ of Latter-Day Saints</div>
+        <div class="vol-date">May 2023 – May 2025</div>
+        <p>Uganda, East Africa</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+        <ul>
+          <li>Adobe Creative Cloud (Photoshop, After Effects)</li>
+          <li>Video editing & post-production</li>
+          <li>Team collaboration & communication</li>
+          <li>Basic HTML, CSS, and SQL knowledge</li>
+          <li>Studio lighting and audio setup</li>
+          <li>Project-based problem solving</li>
+        </ul>
+      </div>
+    </div>
+
+    
+  </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wordle Game – Interactives</title>
+  <link rel="stylesheet" href="Styles/layoutstyles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #dcf2ff;
+      margin: 0;
+      padding-top: 80px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .tile {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+    }
+
+    .tile.correct {
+      background-color: #6aaa64;
+      color: white;
+      border-color: #6aaa64;
+    }
+
+    .tile.present {
+      background-color: #c9b458;
+      color: white;
+      border-color: #c9b458;
+    }
+
+    .tile.absent {
+      background-color: #787c7e;
+      color: white;
+      border-color: #787c7e;
+    }
+
+    input[type="text"] {
+      font-size: 20px;
+      padding: 10px;
+      width: 200px;
+      text-transform: uppercase;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e1e4e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      z-index: 100;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #0073e6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">Hayden Larson</div>
+    <div class="nav-links">
+      <a href="layout.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="interactives.html">Interactives</a>
+      <a href="inspiration.html">Inspiration Video</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Infinite Wordle Game</h1>
+    <p>Guess the 5-letter word. Unlimited tries!</p>
+
+    <div class="grid" id="grid"></div>
+
+    <form onsubmit="submitGuess(event)">
+      <input type="text" id="guessInput" maxlength="5" required />
+      <button type="submit">Guess</button>
+    </form>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script>
+    const wordList = ["apple", "brave", "chair", "dream", "eagle", "frost", "giant", "house", "jelly", "koala", "lemon", "mango", "night", "ocean", "plant", "quiet", "river", "stone", "track", "under", "vivid", "wheat", "xenon", "yacht", "zebra"];
+    let secretWord = "";
+    let guessHistory = [];
+    const maxLength = 5;
+
+    function pickNewWord() {
+      secretWord = wordList[Math.floor(Math.random() * wordList.length)];
+      guessHistory = [];
+      document.getElementById("grid").innerHTML = "";
+      document.getElementById("status").textContent = "";
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById("grid");
+      grid.innerHTML = "";
+
+      for (let guess of guessHistory) {
+        for (let i = 0; i < maxLength; i++) {
+          const tile = document.createElement("div");
+          tile.className = "tile";
+          const letter = guess[i];
+          tile.textContent = letter;
+
+          if (letter === secretWord[i]) {
+            tile.classList.add("correct");
+          } else if (secretWord.includes(letter)) {
+            tile.classList.add("present");
+          } else {
+            tile.classList.add("absent");
+          }
+
+          grid.appendChild(tile);
+        }
+      }
+    }
+
+    function submitGuess(event) {
+      event.preventDefault();
+      const input = document.getElementById("guessInput");
+      const guess = input.value.toLowerCase();
+
+      if (guess.length !== maxLength) {
+        alert("Word must be 5 letters.");
+        return;
+      }
+
+      guessHistory.push(guess);
+      renderGrid();
+      input.value = "";
+
+      if (guess === secretWord) {
+        document.getElementById("status").textContent = `✅ Correct! The word was "${secretWord.toUpperCase()}". Starting new game...`;
+        setTimeout(pickNewWord, 2500);
+      }
+    }
+
+    pickNewWord();
+  </script>
+  
+</body>
+</html>
